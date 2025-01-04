@@ -1,6 +1,6 @@
 // Importation des Composants Reacts
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect} from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Slideshow from "../components/Slideshow";
 import Collapse from "../components/Collapse";
@@ -12,7 +12,6 @@ const Details = () => {
     const { id } = useParams()
     const navigate = useNavigate()
     const logement = DataLogements.find((logement) => logement.id === id)
-    const [openIndexes, setOpenIndexes] = useState([]);
 
     // Redirection à la page erreur si ID incorrect
 
@@ -21,16 +20,6 @@ const Details = () => {
             navigate("/error", { replace: true })
         }
     }, [logement, navigate])
-
-    // Ouverture et Fermeture du Collapse 
-
-    const toggleCollapse = (index) => {
-        if (openIndexes.includes(index)) {
-            setOpenIndexes(openIndexes.filter((i) => i !== index))
-        } else {
-            setOpenIndexes([...openIndexes, index])
-        }
-    }
 
     // Variable  pour indiquer le nombres d'étoiles 
 
@@ -72,8 +61,6 @@ const Details = () => {
                     <Collapse
                         title="Description"
                         content={logement.description}
-                        isOpen={openIndexes.includes(0)}
-                        toggleCollapse={() => toggleCollapse(0)}
                         className="redbox__design--log"
                     />
                     <Collapse
@@ -84,8 +71,6 @@ const Details = () => {
                                     <li key={index}>{equipment}</li>
                                 ))}
                             </ul>}
-                        isOpen={openIndexes.includes(1)}
-                        toggleCollapse={() => toggleCollapse(1)}
                         className="redbox__design--log" />
                 </div>
             </div>

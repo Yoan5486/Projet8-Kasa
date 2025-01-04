@@ -1,6 +1,6 @@
 // Importation des Composants Reacts
 
-import React, { useState } from "react";
+import React from "react";
 import backgroundAbout from "../images/background_about.png"
 import Collapse from "../components/Collapse"
 
@@ -16,18 +16,6 @@ const About = () => {
     { title: "Sécurité", content: "La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes." },
   ]
 
-  // Ouverture et Fermeture du Collapse
-  const [openIndexes, setOpenIndexes] = useState([]);
-
-
-  const toggleCollapse = (index) => {
-    if (openIndexes.includes(index)) {
-      setOpenIndexes(openIndexes.filter((i) => i !== index))
-    } else {
-      setOpenIndexes([...openIndexes, index])
-    }
-  }
-
   // Intégration de la page
 
   return (
@@ -40,7 +28,7 @@ const About = () => {
       {/*Collapse*/}
       <div className="flex__redbox">
         {collapseTexts.map((item, index) => (
-          <Collapse key={index} title={item.title} content={item.content} isOpen={openIndexes.includes(index)} toggleCollapse={() => toggleCollapse(index)} />
+          <Collapse key={index} title={item.title} content={item.content} />
         ))}
       </div>
     </div>

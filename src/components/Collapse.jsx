@@ -1,13 +1,19 @@
 // Importation des Composants Reacts
 
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
 
 // Variables pour ouvrir le Collapse
 
-const Collapse = ({ title, content, isOpen, toggleCollapse, className }) => {
+// Ouverture et Fermeture du Collapse 
+
+const Collapse = ({ title, content, className }) => {
+  const [isOpen, setIsOpen] = useState(false)
+  const toggleCollapse = () => {
+    setIsOpen((prevIsOpen) => !prevIsOpen)
+  }
 
   // Intégration de la page
   return (
@@ -29,8 +35,6 @@ const Collapse = ({ title, content, isOpen, toggleCollapse, className }) => {
 Collapse.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
-  isOpen: PropTypes.bool.isRequired,
-  toggleCollapse: PropTypes.func.isRequired,
   className: PropTypes.string,
 
 
