@@ -232,6 +232,7 @@ main .title__notfound {
   margin: 0;
   margin-bottom: 139px;
   justify-content: center;
+  text-align: center;
 }
 main .link__home--error {
   -webkit-text-decoration: underline solid;
@@ -325,7 +326,7 @@ main .container__log .rating__container .host__container .host__img {
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  margin-left: auto;
+  margin-left: 10px;
   -o-object-fit: cover;
      object-fit: cover;
   background-color: #c4c4c4;
@@ -478,7 +479,7 @@ footer {
     height: 138px;
   }
   main .background__black {
-    width: 89.33%;
+    width: 100%;
     height: 111px;
     border-radius: 25px;
     position: relative;
@@ -489,7 +490,7 @@ footer {
     bottom: 113px;
     background-size: cover;
     width: 100%;
-    width: 89.33%;
+    width: 100%;
     height: 111px;
     border-radius: 25px;
     position: relative;

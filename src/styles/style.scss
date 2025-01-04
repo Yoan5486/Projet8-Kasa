@@ -261,6 +261,7 @@ main {
     margin: 0;
     margin-bottom: 139px;
     justify-content: center;
+    text-align: center;
   }
 
   .link__home--error {
@@ -352,7 +353,7 @@ main {
           width: 64px;
           height: 64px;
           border-radius: 50%;
-          margin-left: auto;
+          margin-left: 10px;
           object-fit: cover;
           background-color: #c4c4c4;
         }
@@ -538,7 +539,7 @@ footer {
     }
 
     .background__black {
-      @include background__img(89.33%, 111px);
+      @include background__img(100%, 111px);
       top: 25px;
     }
 
@@ -547,7 +548,7 @@ footer {
       bottom: 113px;
       background-size: cover;
       width: 100%;
-      @include background__img(89.33%, 111px);
+      @include background__img(100%, 111px);
     }
 
     .title__home {
